@@ -1,0 +1,209 @@
+/* =========================
+   Global
+========================= */
+html, body {
+  background-color: #121212;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+
+
+
+/* ===== Force light style for name popup ===== */
+
+/* modal background */
+.modal-content {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+/* modal title & text */
+.modal-content h5,
+.modal-content p,
+.modal-content label {
+  color: #000000 !important;
+  opacity: 1 !important;
+}
+
+/* input text */
+.modal-content input {
+  color: #000000 !important;
+  background-color: #ffffff !important;
+}
+
+/* placeholder */
+.modal-content input::placeholder {
+  color: #6c757d;
+}
+
+/* button */
+.modal-content .btn {
+  color: #ffffff;
+}
+.modal-content{
+  border-radius: 14px;
+}
+#taskInput {
+  resize: none;
+  overflow: hidden;
+}
+
+/* =========================
+   Light Mode
+========================= */
+body.light-mode {
+  background: #f8f9fa;
+  color: #111;
+}
+
+body.light-mode .todo-card {
+  background: #ffffff;
+}
+
+/* =========================
+   Dark Mode
+========================= */
+body.dark-mode {
+  background: #121212;
+  color: #f1f1f1;
+}
+
+body.dark-mode .todo-card {
+  background: #1e1e1e;
+}
+
+
+
+/* =========================
+   Tasks
+========================= */
+.list-group-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  border: none;
+  margin-bottom: 6px;
+  border-radius: 6px;
+  transition: background 0.2s ease, color 0.2s ease, opacity 0.2s ease;
+}
+
+/* Light mode task */
+body.light-mode .list-group-item {
+  background: #f9f9f9;
+  color: #111;
+}
+
+/* Dark mode task */
+body.dark-mode .list-group-item {
+  background: #242424;
+  color: #f1f1f1;
+}
+
+/* =========================
+   Completed Tasks – FINAL
+========================= */
+
+/* Base completed */
+.list-group-item.completed {
+  text-decoration: line-through;
+  opacity: 1;
+}
+
+/* Light Mode – Completed */
+body.light-mode .list-group-item.completed {
+  background: #e3e3e3;   /* grey highlight واضح */
+  color: #6a6a6a;
+  border-left: 4px solid #b0b0b0;
+}
+
+/* Dark Mode – Completed */
+body.dark-mode .list-group-item.completed {
+  background: #2f2f2f;   /* grey highlight غامق شيك */
+  color: #bcbcbc;
+  border-left: 4px solid #6f6f6f;
+}
+
+/* Date inside completed */
+.list-group-item.completed .task-date {
+  opacity: 0.85;
+}
+
+
+/* =========================
+   Greeting
+========================= */
+#greeting {
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+/* =========================
+   Animations
+========================= */
+.list-group-item {
+  animation: fadeIn 0.25s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.list-group-item:hover {
+  transform: scale(1.01);
+}
+
+/* =========================
+   Counter
+========================= */
+#taskCounter {
+  transition: opacity 0.2s ease;
+}
+
+#taskCounter.hidden {
+  opacity: 0;
+}
+
+/* =========================
+   Task Content
+========================= */
+.task-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.task-date {
+  font-size: 0.75rem;
+  opacity: 0.75;
+}
+
+/* =========================
+   Dark mode text fixes
+========================= */
+ body.dark-mode h5,
+body.dark-mode .small,
+body.dark-mode .task-date,
+body.dark-mode #taskCounter {
+  color: #cfcfcf;
+  opacity: 1;
+}
+
+/* Remove text-muted effect in Dark Mode */
+ body.dark-mode .text-muted {
+  color: #cfcfcf !important;
+  opacity: 1 !important;
+} 
+
+
+

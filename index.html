@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- iOS PWA -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Todo List">
+
+<!-- Theme color -->
+<meta name="theme-color" content="#121212">
+
+  <title>Todo App</title>
+
+  <!-- Bootstrap -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+    <link rel="apple-touch-icon" href="icon-192.png">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json">
+
+</head>
+<!-- Name Modal -->
+<div class="modal fade" id="nameModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title">👋 أهلاً بيك</h5>
+      </div>
+
+      <div class="modal-body">
+        <label class="form-label">اكتب اسمك بالعربى:</label>
+        <input type="text" id="userNameInput" class="form-control" />
+      </div>
+
+      <div class="modal-footer">
+        <button id="saveNameBtn" class="btn btn-dark w-100">
+          دخول
+        </button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<body class="light-mode">
+
+  <div class="container d-flex justify-content-center align-items-center min-vh-100 pt-3 pb-3">
+    <div class="todo-card p-4 rounded shadow w-100" style="max-width: 400px;">
+
+
+        <!-- Header -->
+<div class="text-center mb-3">
+
+  <h5 class="fw-bold mb-1">كنيسة الأنبا انطونيوس شبرا</h5>
+  <div class="small text-muted">أسرة تلاميذ المسيح</div>
+  <div class="small text-muted mb-2"> ١٧٤٢ ش</div>
+
+  <div id="greeting" class="mt-2 fw-semibold d-flex justify-content-center align-items-center gap-2">
+  <span id="greetingText"></span>
+  <button id="resetNameBtn" class="btn btn-sm btn-outline-secondary">
+    ✏️
+  </button>
+</div>
+
+
+  <div class="d-flex justify-content-end mt-2">
+    <button id="themeToggle" class="btn btn-outline-dark btn-sm">
+      🌙
+    </button>
+  </div>
+</div>
+      <!-- Input -->
+      <div class="input-group mb-3">
+        <textarea
+  id="taskInput"
+  class="form-control"
+  rows="1"
+  placeholder="Add new task..."
+></textarea>
+
+        <button id="addTaskBtn" class="btn btn-dark">
+          Add
+        </button>
+      </div>
+      <div id="taskCounter" class="text-end small text-muted mb-2"></div>
+      <div class="d-flex justify-content-between align-items-center mb-2">
+        <div id="taskCounter" class="small text-muted"></div>
+            <button
+                 id="clearCompletedBtn"
+                    class="btn btn-sm btn-outline-danger d-none"
+>
+    Clear Completed
+  </button>
+</div>
+
+
+
+      <!-- Task List -->
+      <ul id="taskList" class="list-group">
+        <!-- tasks will appear here -->
+      </ul>
+
+    </div>
+  </div>
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
